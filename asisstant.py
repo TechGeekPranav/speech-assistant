@@ -1,5 +1,7 @@
 # C:\Users\User\Documents\Personal\Code and other\Python\venvspeech\speech\Scripts>activate.bat
-##greetings
+#interpreter-C:\Users\User\Documents\Personal\Code and other\Python\venvspeech\speech\Scripts\python.exe
+#List of commands below:
+#greetings
 #name
 #time
 #search google for
@@ -23,7 +25,7 @@ import random
 from time import ctime # get time details
 import webbrowser # open browser for search
 
-import time
+import time # help to get time
 import os # app helper-pranav todo add app opening
 from PIL import Image   
 import subprocess
@@ -32,8 +34,8 @@ import pyttsx3
 import bs4 as bs
 
 import os
-import pyjokes
-import datetime
+import pyjokes #give jokes
+import datetime #time
 
 class person:
     name = ''
@@ -44,7 +46,7 @@ class asis:
     name = ''
     def setName(self, name):
         self.name = name
-
+# finction for writing something down
 def note(text):
     date = datetime.datetime.now()
     file_name = str(date).replace(":", "-") + "-note.txt"
@@ -58,7 +60,7 @@ def there_exists(terms):
         if term in voice_data:
             return True
 
-
+#unused code
  #def engine_speak(text):
   #  text = str(text)
   #  engine.say(text)
@@ -114,15 +116,15 @@ def respond(voice_data):
 
 
         
-
+#name
     if there_exists(["my name is"]):
         person_name = voice_data.split("is")[-1].strip()
         engine_speak("okay, i will remember that " + person_name)
         person_obj.setName(person_name) # remember name in person object
-    
+#name
     if there_exists(["what is my name","what's my name","tell me my name"]):
         engine_speak("Your name must be " + person_obj.name)
-    
+#name 
     if there_exists(["your name should be"]):
         asis_name = voice_data.split("be")[-1].strip()
         engine_speak("okay, i will remember that my name is " + asis_name)
@@ -152,7 +154,7 @@ def respond(voice_data):
         url = "https://google.com/search?q=" + search_term
         webbrowser.get().open(url)
         engine_speak("Here is what I found for" + search_term + "on google")
-
+# taking a note
     if there_exists(['make a note', 'write something down', 'i want to take a note', 'can you write something down']):
             engine_speak("What would you like me to write down?")
             notedown = record_audio()
@@ -178,7 +180,7 @@ def respond(voice_data):
         url = "https://google.com/search?q=" + search_term
         webbrowser.get().open(url)
         engine_speak("Here is what I found for " + search_term + " on google")
-
+#open apps
     if there_exists(['open explorer', 'open file explorer', 'open files', 'open my files', 'please open files', 'can you open files']):
         os.system('explorer')
         engine_speak("I have opened file explorer. You can now browse all your files.")
@@ -274,12 +276,12 @@ def respond(voice_data):
         wikisearch = 'https://en.wikipedia.org/wiki/'+definition
         webbrowser.get().open(wikisearch)
         engine_speak("This is what I found on wikipedia for"+definition)
-
+#greeting
     if there_exists(["exit", "quit", "goodbye", 'stop', 'bye', 'i have to go', 'thank you']):
         engine_speak("bye")
         exit()
 
-    # Current city or region
+    #name
     if there_exists(["who are you", 'what are you']):
         
         engine_speak('I am alexis. your personal voice assistant')    
@@ -300,7 +302,7 @@ asis_obj.name = 'Alexis'
 person_obj.name = ""
 engine = pyttsx3.init()
 
-
+#config for terminal
 while(1):
     voice_data = record_audio("Listening...") # get the voice input
     print("Done")
