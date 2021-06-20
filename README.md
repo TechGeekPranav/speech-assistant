@@ -14,4 +14,6 @@ eg. **import helloworld**
 Here you would perform **pip install helloworld** .
 You can also use conda.
 
-WARNING: MIT Liscence has been applied on this. A copy of the liscence and attributes of this file will need to be shown for distribution, private or patent use.
+**Instead, you can easily just run _setup.py_. That will help against installing manually.**
+
+WARNING: MIT License has been applied on this. A copy of the liscence and attributes of this file will need to be shown for distribution, private or patent use.
